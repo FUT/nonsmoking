@@ -4,6 +4,6 @@ Nonsmoking::Application.routes.draw do
   root to: 'pages#home'
 
   namespace 'pages' do
-    %w{home info how material}.each { |action| get action }
+    %w{home info how material news}.each { |action| get action }
   end
 end
