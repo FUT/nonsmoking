@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'forem', :git => 'git://github.com/radar/forem.git'
+
+gem 'kaminari', '0.13.0'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -53,7 +57,7 @@ gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "sendgrid", ">= 1.0.1"
 gem "devise", ">= 2.2.3"
-gem "cancan", ">= 1.6.9"
+gem "cancan"
 gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.1.0"
 gem "quiet_assets", ">= 1.0.2", :group => :development
