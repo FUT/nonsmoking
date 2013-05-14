@@ -35,6 +35,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+#
+group :development do
+  gem 'pry'
+end
 
 gem "thin", ">= 1.5.0"
 gem "pg", ">= 0.15.0"
