@@ -1,8 +1,12 @@
-#login-form = form_tag user_session_path do
-  = text_field_tag 'user[email]'
-  = password_field_tag 'user[password]'
-  = check_box_tag 'user[remember_me]'
-  = label_tag 'user[remember_me]', 'Запомнить меня'
-  button Войти
-  = link_to 'Забыли пароль?', new_password_path('user')
-  = link_to 'Регистрация', new_user_registration_path
+#login-form
+  - if signed_in?
+    = link_to 'Выйти', destroy_user_session_path, method: :delete
+  - else
+    = form_tag user_session_path do
+      = text_field_tag 'user[email]'
+      = password_field_tag 'user[password]'
+      = check_box_tag 'user[remember_me]'
+      = label_tag 'user[remember_me]', 'Запомнить меня'
+      button Войти
+      = link_to 'Забыли пароль?', new_password_path('user')
+      = link_to 'Регистрация', new_user_registration_path
