@@ -7,10 +7,10 @@ html
     = csrf_meta_tags
 
   body
-    .header.navbar.navbar-fixed-top
-      | asdfasdfASDFASDF
-    .container-fluid
-      .menu.span3
-        = render 'pages/menu'
-      .content-inner.span9
-        = yield
+    .container
+      .masthead
+        h3.header.muted
+          | asdfasdfASDFASDF
+        .content-inner
+          = render 'pages/menu'
+          = yield

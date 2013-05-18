@@ -1,7 +1,9 @@
-#menu
-  ul
-    li = link_to 'Главная', main_app.pages_home_path
-    li = link_to 'Проект "Жизнь без сигарет"', main_app.pages_info_path
-    li = link_to 'Новости', main_app.news_items_path
-    li = link_to 'Форум', forem.forums_path
-    li = link_to 'Дополнительные материалы', main_app.pages_material_path
+.menu.navbar
+  .navbar-inner
+    .container
+      ul.nav
+        li = link_to 'Главная', main_app.pages_home_path
+        li = link_to 'Жизнь без сигарет', main_app.pages_info_path
+        li = link_to 'Новости', main_app.news_items_path
+        li = link_to 'Форум', forem.forums_path
+        li = link_to 'Дополнительные материалы', main_app.pages_material_path
