@@ -2,6 +2,71 @@
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic)
 
+/* Forem overrided */
+#forums thead tr th
+  background: #eee
+  color: black
+
+table.subdued thead th
+  background: #eee
+  color: black
+
+#forum menu a, #topic menu a, #posts .post .contents .actions li a
+  background: #fff
+  border: none
+  display: inline-block
+  @include ie7-inline-block()
+  padding: 4px 12px
+  margin-bottom: 0 // For input.btn
+  font-size: $baseFontSize
+  line-height: $baseLineHeight
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  @include buttonBackground($btnBackground, $btnBackgroundHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75))
+  border: 1px solid $btnBorder
+  *border: 0 // Remove the border to prevent IE7's black border on input:focus
+  border-bottom-color: darken($btnBorder, 10%)
+  @include border-radius($baseBorderRadius)
+  @include ie7-restore-left-whitespace() // Give IE7 some love
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05))
+
+  // Hover/focus state
+  &:hover,
+  &:focus
+    color: $grayDark
+    text-decoration: none
+    background-position: 0 -15px
+
+    // transition is only when going to hover/focus, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    @include transition(background-position .1s linear)
+
+  // Focus state for keyboard and accessibility
+  &:focus
+    @include tab-focus()
+
+  // Active state
+  &.active,
+  &:active
+    background-image: none
+    outline: 0
+    @include box-shadow(inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05))
+
+  // Disabled state
+  &.disabled,
+  &[disabled]
+    cursor: default
+    background-image: none
+    @include opacity(65)
+    @include box-shadow(none)
+
+#posts .post .contents .actions li a
+  height: 14px
+  line-height: 14px
+  margin-bottom: 2px
+
+/* Pages */
 body
   font-family: 'Ubuntu', Arial, sans-serif
 
@@ -15,13 +80,24 @@ header#header
   box-shadow: 0 1px 2px #888
   z-index: 1000
 
+p
+  text-indent: 0px
+
 .logo
+  margin: 0
   float: left
-  font-size: 1.6em
-  font-weight: bold
-  text-shadow: 0px 1px 0px #fff
-  line-height: 31px
-  color: #666
+  .text
+    margin-top: 6px
+    font-size: 0.9em
+    font-weight: bold
+    text-shadow: 0px 1px 0px #fff
+    line-height: 31px
+    color: #666
+  .image
+    width: 46px
+    margin-top: 4px
+
+
 
 .masthead
   margin-top: 75px
@@ -48,9 +124,6 @@ blockquote
 .center
   text-align: center
 
-p
-  text-indent: 40px
-
 .login-form
   display: inline-block
   float: right
@@ -59,6 +132,8 @@ p
     margin: 10px 0 10px 0
   .input
     height: 19px
+  input
+    width: 140px
   *
     margin-left: 6px
     display: inline-block
