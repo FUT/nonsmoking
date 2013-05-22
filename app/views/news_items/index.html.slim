@@ -1,3 +1,2 @@
-h1.center Новости
-= link_to 'Добавить новость', new_news_item_path, class: 'btn btn-info' if signed_in? && current_user.admin?
+.center = link_to 'Добавить новость', new_news_item_path, class: 'btn btn-info' if signed_in? && current_user.admin?
 = render @news_items.order('created_at DESC')
