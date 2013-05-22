@@ -91,6 +91,9 @@ GEM
     figaro (0.6.4)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    forem-gfm_formatter (1.0.0)
+      forem
+      redcarpet (~> 2.0.1)
     forem-redcarpet (1.0.0)
       pygments.rb (= 0.2.4)
       redcarpet (= 2.0.1)
@@ -249,6 +252,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
   forem!
+  forem-gfm_formatter
   forem-theme-twist!
   haml-rails (>= 0.4)
   haml2slim (>= 0.4.6)

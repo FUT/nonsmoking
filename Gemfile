@@ -8,6 +8,8 @@ gem 'kaminari', '0.13.0'
 
 gem 'forem-theme-twist', :git => "git://github.com/radar/forem-theme-twist.git"
 
+gem 'forem-gfm_formatter'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
