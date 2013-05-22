@@ -11,6 +11,8 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *
+ *= require forem/twist/style
+ *
  *= require screen
  *
  *= require_self

@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
     admin
   end
   alias :forem_admin? :forem_admin
+
+  def to_s
+    email
+  end
 end

@@ -6,6 +6,8 @@ gem 'forem', :git => 'git://github.com/radar/forem.git'
 
 gem 'kaminari', '0.13.0'
 
+gem 'forem-theme-twist', :git => "git://github.com/radar/forem-theme-twist.git"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

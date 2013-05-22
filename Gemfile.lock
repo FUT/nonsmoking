@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/radar/forem-theme-twist.git
+  revision: f08ab243ee695bd5485d589c1177d99d00602150
+  specs:
+    forem-theme-twist (0.0.1)
+
+GIT
   remote: git://github.com/radar/forem.git
   revision: ce2845536d83b73b7356e614e87fd7bebcdce8f0
   specs:
@@ -243,6 +249,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
   forem!
+  forem-theme-twist!
   haml-rails (>= 0.4)
   haml2slim (>= 0.4.6)
   html2haml (>= 1.0.1)

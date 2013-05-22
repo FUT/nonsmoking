@@ -35,7 +35,7 @@
       </span>
     <% end %>
 
-    <ul class='actions'>
+    <ul class='actions post-actions'>
       <% if forem_user %>
         <% if can?(:reply, post.topic) %>
           <% if post.topic.can_be_replied_to? %>
