@@ -10,9 +10,11 @@ Nonsmoking::Application.routes.draw do
   devise_for :users
 
   resources :news_items
+  resources :diaries
 
   namespace 'pages' do
-    %w{home info how material news}.each { |action| get action }
+    get :home
+    get :info
   end
 
   root to: 'pages#home'
