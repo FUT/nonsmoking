@@ -7,10 +7,15 @@ html
     = csrf_meta_tags
 
   body
-    header#header
-      .container = render 'pages/header'
-    .container
-      .masthead
-        = render 'pages/menu'
-        .content-inner
-          = yield
+    #wrap
+      header#header
+        .container = render 'pages/header'
+      .container
+        .masthead
+          = render 'pages/menu'
+          .content-inner
+            = yield
+      #pusher
+    footer#footer
+      .container
+        | asdfasdf
