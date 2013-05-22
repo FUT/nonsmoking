@@ -5,4 +5,11 @@ class Diary < ActiveRecord::Base
 
   after_create :create_diary
 
+  def reset_state!
+    update_attribute :state, 0
+  end
+
+  def next_state!
+    increment! :state
+  end
 end

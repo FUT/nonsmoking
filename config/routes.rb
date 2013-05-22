@@ -11,6 +11,7 @@ Nonsmoking::Application.routes.draw do
 
   resources :news_items
   resources :diaries
+  resources :states, only: :show
 
   namespace 'pages' do
     get :home
