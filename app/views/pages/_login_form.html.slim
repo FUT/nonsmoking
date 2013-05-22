@@ -1,0 +1,8 @@
+- if signed_in?
+  .logout-button = link_to 'Выйти'
+- else
+  .login-form = simple_form_for :user, url: user_session_path do |f|
+    = f.input :email, placeholder: 'email', label: false
+    = f.input :password, placeholder: 'password', label: false
+    = f.submit 'Войти', class: 'btn btn-success'
+    = link_to 'Регистрация', new_user_registration_path, class: 'btn'

@@ -9,8 +9,7 @@ html
   body
     .container
       .masthead
-        h3.header.muted
-          | Жизнь без сигарет
+        = render 'pages/header'
         .content-inner
           = render 'pages/menu'
           = yield
