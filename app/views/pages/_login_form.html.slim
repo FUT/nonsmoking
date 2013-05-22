@@ -1,7 +1,7 @@
 .login-form.clearfix
   - if signed_in?
     .logout-button = link_to 'Выйти', main_app.destroy_user_session_path, method: :delete, class: 'btn btn-info'
-  - elsif controller_name != 'registrations'
+  - elsif !%w{registrations sessions}.include?(controller_name)
     = simple_form_for :user, url: main_app.user_session_path do |f|
       = f.input :email, placeholder: 'email', label: false
       = f.input :password, placeholder: 'password', label: false
