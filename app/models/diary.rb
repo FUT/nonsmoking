@@ -4,4 +4,5 @@ class Diary < ActiveRecord::Base
   belongs_to :user
 
   after_create :create_diary
+
 end
