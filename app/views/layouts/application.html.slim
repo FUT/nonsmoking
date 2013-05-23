@@ -10,12 +10,9 @@ html
     #wrap
       header#header
         .container = render 'pages/header'
-      .container
-        .masthead
-          = render 'pages/menu'
-          .content-inner
-            = yield
-      #pusher
+      .container.main-container
+        = render 'pages/menu'
+        = yield
     footer#footer
       .container
         | asdfasdf

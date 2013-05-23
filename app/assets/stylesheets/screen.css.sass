@@ -2,35 +2,38 @@
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic)
 
-/* Sticky footer */
 html, body
   height: 100%
-  padding-bottom: 0 !important
 
 #wrap
+  position: relative
   min-height: 100%
-  height: auto !important
-  height: 100%
-  margin: 0 auto -60px
+  width: 960px
+  margin: 0 auto
+  background: #fff
+  box-shadow: 0 0 5px #888
 
-#push, #footer
-  height: 60px
+article
+  padding: 0 15px
+
+.container.main-container
+  padding-top: 75px
+  padding-bottom: 100px
 
 #footer
-  background-color: #f5f5f5
+  position: relative
+  height: 80px
+  margin-top: -80px
+  background: #eee
+  box-shadow: 0 -1px 2px #888
+  z-index: 1000
 
-@media (max-width: 767px)
-  #footer
-    margin-left: -20px
-    margin-right: -20px
-    padding-left: 20px
-    padding-right: 20px
-
-.container .credit
-  margin: 20px 0
-
-code
-  font-size: 80%
+body
+  font-family: 'Ubuntu', Arial, sans-serif
+  min-height: 100%
+  position: relative
+  padding: 0
+  background: url(/assets/system/pattern.jpg) 0 0 transparent
 
 /* Forem overrided */
 #forums thead tr th
@@ -100,9 +103,6 @@ table.subdued thead th
 .logout-button
   margin-top: 10px
 
-body
-  font-family: 'Ubuntu', Arial, sans-serif
-
 header#header
   background: #eee
   position: fixed
@@ -129,9 +129,6 @@ p
   .image
     width: 46px
     margin-top: 4px
-
-.masthead
-  margin-top: 75px
 
 .content-inner
   padding: 8px
@@ -176,9 +173,6 @@ blockquote
   margin-top: 10px
 
 /* Generated */
-body
-  padding-bottom: 60px
-
 .container
   margin: 0 auto
   max-width: 1000px
