@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523133141) do
+ActiveRecord::Schema.define(:version => 20130523175341) do
 
   create_table "diaries", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130523133141) do
     t.text     "stereotype_cause"
     t.text     "stereotype_denial"
     t.text     "hobby_no_smoking"
+    t.datetime "preparation_ended"
   end
 
   create_table "forem_categories", :force => true do |t|

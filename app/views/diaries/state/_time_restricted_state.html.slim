@@ -1,0 +1,15 @@
+h1.center = t('states')[diary.state - 8]
+
+p На данном этапе делитесь cвоими ощущениями, сложностями и успехами в вашей жизни без сигареты, получайте комментарии и поддержку со стороны других владельцев дневников.
+
+span На прохождение текущего этапа необходимо &nbsp
+span
+  b = t('time_restrictions')[diary.state - 8]
+br
+
+- if diary.ready_for_next_state?
+  = simple_form_for :diary, url: next_state_diary_path(@diary) do |f|
+    .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
+- else
+  span До прохождения этапа осталось&nbsp
+  b = distance_of_time_in_words Time.now, Time.now + 2.days

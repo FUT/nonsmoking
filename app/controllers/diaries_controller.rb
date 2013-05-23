@@ -29,4 +29,8 @@ class DiariesController < ApplicationController
     @diary.next_state!
     redirect_to action: :show
   end
+
+  def reset
+
+  end
 end

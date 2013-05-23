@@ -1,1 +1,5 @@
-article = render "diaries/state/s#{@diary.state}", diary: @diary
+article
+  - if @diary.state < 8
+    = render "diaries/state/s#{@diary.state}", diary: @diary
+  - else
+    = render 'diaries/state/time_restricted_state', diary: @diary
