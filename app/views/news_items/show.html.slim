@@ -1,3 +1,7 @@
 = render @news_item
 
-= link_to 'Назад', news_items_path, class: 'btn btn-primary'
+.actions
+  = link_to 'Назад', news_items_path, class: 'btn btn-primary'
+  - if signed_in? && current_user.admin?
+    = link_to 'Редактировать', edit_news_item_path(@news_item), class: 'btn btn-primary'
+    = link_to 'Удалить', news_item_path(@news_item), method: :delete, class: 'btn btn-primary'

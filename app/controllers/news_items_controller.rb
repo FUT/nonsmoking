@@ -12,7 +12,7 @@ class NewsItemsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
   def show
