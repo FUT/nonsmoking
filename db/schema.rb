@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522111038) do
+ActiveRecord::Schema.define(:version => 20130523104007) do
 
   create_table "diaries", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "state",      :default => 0, :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.integer  "state",               :default => 0,     :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "smoking_index",       :default => 0,     :null => false
+    t.integer  "smoking_dependency",  :default => 0,     :null => false
+    t.integer  "fagerstrom",          :default => 0,     :null => false
+    t.integer  "spilberg",            :default => 0,     :null => false
+    t.integer  "zung",                :default => 0,     :null => false
+    t.text     "previous_experience", :default => ""
+    t.text     "previous_fail",       :default => ""
+    t.boolean  "failed",              :default => false, :null => false
   end
 
   create_table "forem_categories", :force => true do |t|

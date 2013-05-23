@@ -10,8 +10,13 @@ Nonsmoking::Application.routes.draw do
   devise_for :users
 
   resources :news_items
-  resources :diaries
-  resources :states, only: :show
+  resources :diaries do
+    member do
+      get :next_state
+      post :smoking_index
+    end
+  end
+  resources :states, only: [:index, :show]
 
   namespace 'pages' do
     get :home

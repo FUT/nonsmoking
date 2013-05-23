@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :diaries
 
+  after_create :create_diary
+
   def forem_admin
     admin
   end
@@ -13,5 +15,13 @@ class User < ActiveRecord::Base
 
   def to_s
     email
+  end
+
+  def diary
+    diaries.where(failed: false).first
+  end
+
+  def create_diary
+    diaries.create
   end
 end

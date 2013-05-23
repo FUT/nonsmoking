@@ -3,8 +3,6 @@ class Diary < ActiveRecord::Base
 
   belongs_to :user
 
-  after_create :create_diary
-
   def reset_state!
     update_attribute :state, 0
   end
