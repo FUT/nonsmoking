@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  respond_to :html
+
   def forem_user
     current_user
   end

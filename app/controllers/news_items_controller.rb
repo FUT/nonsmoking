@@ -10,9 +10,14 @@ class NewsItemsController < ApplicationController
   end
 
   def update
+    @news_item.update_attributes params[:news_item]
+
+    respond_with @news_item
   end
 
   def destroy
+    @news_item.destroy
+    redirect_to action: :index
   end
 
   def show
