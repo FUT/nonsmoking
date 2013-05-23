@@ -1,4 +1,8 @@
+# encoding: utf-8
+
 class Diary < ActiveRecord::Base
+  DEPENDENCIES = %w{Идеаторная Психосоматическая Диссоциированная}
+
   attr_accessible :state, :user_id
 
   belongs_to :user
