@@ -15,6 +15,7 @@ Nonsmoking::Application.routes.draw do
       get :next_state
       post :smoking_index
       post :smoking_dependency
+      post :fagerstrom
     end
   end
   resources :states, only: [:index, :show]
