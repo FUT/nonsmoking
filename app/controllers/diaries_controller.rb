@@ -2,8 +2,9 @@ class DiariesController < ApplicationController
   load_resource
 
   def next_state
-    @diary.next_state!
+    @diary.update_attributes params[:diary]
 
+    @diary.next_state!
     redirect_to action: :show
   end
 
@@ -24,13 +25,6 @@ class DiariesController < ApplicationController
 
   def fagerstrom
     @diary.update_attribute :fagerstrom, params[:fagerstrom].values.map(&:to_i).reduce(&:+)
-
-    @diary.next_state!
-    redirect_to action: :show
-  end
-
-  def date_range
-    @diary.update_attributes params[:diary]
 
     @diary.next_state!
     redirect_to action: :show

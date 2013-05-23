@@ -12,11 +12,10 @@ Nonsmoking::Application.routes.draw do
   resources :news_items
   resources :diaries do
     member do
-      get :next_state
+      post :next_state
       post :smoking_index
       post :smoking_dependency
       post :fagerstrom
-      post :date_range
     end
   end
   resources :states, only: [:index, :show]
