@@ -18,6 +18,9 @@ Nonsmoking::Application.routes.draw do
       post :fagerstrom
       post :reset_state
     end
+    collection do
+      get :all
+    end
   end
   resources :states, only: [:index, :show]
 

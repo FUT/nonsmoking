@@ -1,6 +1,10 @@
 class DiariesController < ApplicationController
   load_resource
 
+  def all
+    @diaries = Diary.where(failed: params[:failed])
+  end
+
   def next_state
     @diary.update_attributes params[:diary]
 
@@ -30,7 +34,10 @@ class DiariesController < ApplicationController
     redirect_to action: :show
   end
 
-  def reset
+  def reset_state
+    @diary.update_attribute :failed, true
+    new_diary = @diary.user.diaries.create
 
+    redirect_to new_diary
   end
 end

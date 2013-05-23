@@ -15,4 +15,4 @@ br
   b = distance_of_time_in_words Time.now, Time.now + 2.days
 
 p.muted.reset-state Если вы сорвались и закурили - сбросьте счетчик.
-.center = link_to 'Я сорвался', reset_state_diary_path(diary), class: 'btn btn-large btn-warning'
+.center = link_to 'Я сорвался', reset_state_diary_path(diary), method: :post, class: 'btn btn-large btn-warning'

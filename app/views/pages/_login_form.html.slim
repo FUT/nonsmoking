@@ -1,6 +1,6 @@
 .login-form.clearfix
   - if signed_in?
-    .diary-link = link_to current_user.email, diary_path(current_user.diary), class: 'btn btn-success'
+    = link_to 'Дневники', main_app.diaries_path, class: 'btn btn-success'
     .logout-button = link_to 'Выйти', main_app.destroy_user_session_path, method: :delete, class: 'btn btn-info'
   - elsif !%w{registrations sessions}.include?(controller_name)
     = simple_form_for :user, url: main_app.user_session_path do |f|
