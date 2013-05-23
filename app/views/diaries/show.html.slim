@@ -1,5 +1,5 @@
 article
-  - if @diary.state < 8
-    = render "diaries/state/s#{@diary.state}", diary: @diary
-  - else
+  - if (8..14).include? @diary.state
     = render 'diaries/state/time_restricted_state', diary: @diary
+  - else
+    = render "diaries/state/s#{@diary.state}", diary: @diary

@@ -8,8 +8,11 @@ span
 br
 
 - if diary.ready_for_next_state?
-  = simple_form_for :diary, url: next_state_diary_path(@diary) do |f|
+  = simple_form_for :diary, url: next_state_diary_path(diary) do |f|
     .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
 - else
   span До прохождения этапа осталось&nbsp
   b = distance_of_time_in_words Time.now, Time.now + 2.days
+
+p.muted.reset-state Если вы сорвались и закурили - сбросьте счетчик.
+.center = link_to 'Я сорвался', reset_state_diary_path(diary), class: 'btn btn-large btn-warning'

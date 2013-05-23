@@ -2,6 +2,18 @@
 
 class Diary < ActiveRecord::Base
   DEPENDENCIES = %w{Идеаторная Психосоматическая Диссоциированная}
+
+  TEST_TIME_RESTRICTIONS = [
+    0,
+    10.seconds,
+    20.seconds,
+    30.seconds,
+    40.seconds,
+    50.seconds,
+    60.seconds,
+    70.seconds,
+  ]
+
   TIME_RESTRICTIONS = [
     0,
     0,
@@ -12,6 +24,7 @@ class Diary < ActiveRecord::Base
     9.month,
     1.year
   ]
+  TIME_RESTRICTIONS = TEST_TIME_RESTRICTIONS
 
   attr_accessible :state, :user_id, :smoke_years, :smoke_months, :previous_experience, :previous_fail,
     :aim, :smoking_bad, :what_if_no_smoking, :why_it_brings_satisfaction, :stereotype_cause, :stereotype_denial,
