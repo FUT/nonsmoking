@@ -11,23 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523124807) do
+ActiveRecord::Schema.define(:version => 20130523133141) do
 
   create_table "diaries", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "state",               :default => 0,     :null => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.integer  "smoking_index",       :default => 0,     :null => false
-    t.integer  "smoking_dependency",  :default => 0,     :null => false
-    t.integer  "fagerstrom",          :default => 0,     :null => false
-    t.integer  "spilberg",            :default => 0,     :null => false
-    t.integer  "zung",                :default => 0,     :null => false
-    t.text     "previous_experience", :default => ""
-    t.text     "previous_fail",       :default => ""
-    t.boolean  "failed",              :default => false, :null => false
+    t.integer  "state",                      :default => 0,     :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.integer  "smoking_index",              :default => 0,     :null => false
+    t.integer  "smoking_dependency",         :default => 0,     :null => false
+    t.integer  "fagerstrom",                 :default => 0,     :null => false
+    t.integer  "spilberg",                   :default => 0,     :null => false
+    t.integer  "zung",                       :default => 0,     :null => false
+    t.text     "previous_experience",        :default => ""
+    t.text     "previous_fail",              :default => ""
+    t.boolean  "failed",                     :default => false, :null => false
     t.integer  "smoke_years"
     t.integer  "smoke_months"
+    t.text     "aim"
+    t.text     "smoking_bad"
+    t.text     "what_if_no_smoking"
+    t.text     "why_it_brings_satisfaction"
+    t.text     "stereotype_cause"
+    t.text     "stereotype_denial"
+    t.text     "hobby_no_smoking"
   end
 
   create_table "forem_categories", :force => true do |t|
