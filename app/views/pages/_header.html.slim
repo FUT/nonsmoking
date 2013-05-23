@@ -1,8 +1,8 @@
-h1.logo
+h1.logo-text
   - if action_name == 'home'
-    .text Жизнь без сигарет
+    | Жизнь без сигарет
   - else
-    .image = link_to main_app.root_path do
-      = image_tag 'system/no_smoking.png'
+    = link_to main_app.root_path do
+      | Жизнь без сигарет
 
 = render 'pages/login_form'
