@@ -28,4 +28,11 @@ class DiariesController < ApplicationController
     @diary.next_state!
     redirect_to action: :show
   end
+
+  def date_range
+    @diary.update_attributes params[:diary]
+
+    @diary.next_state!
+    redirect_to action: :show
+  end
 end

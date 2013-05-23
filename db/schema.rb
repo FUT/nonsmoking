@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523104007) do
+ActiveRecord::Schema.define(:version => 20130523124807) do
 
   create_table "diaries", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20130523104007) do
     t.text     "previous_experience", :default => ""
     t.text     "previous_fail",       :default => ""
     t.boolean  "failed",              :default => false, :null => false
+    t.integer  "smoke_years"
+    t.integer  "smoke_months"
   end
 
   create_table "forem_categories", :force => true do |t|

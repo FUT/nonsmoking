@@ -3,7 +3,7 @@
 class Diary < ActiveRecord::Base
   DEPENDENCIES = %w{Идеаторная Психосоматическая Диссоциированная}
 
-  attr_accessible :state, :user_id
+  attr_accessible :state, :user_id, :smoke_years, :smoke_months
 
   belongs_to :user
 

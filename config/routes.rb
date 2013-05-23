@@ -16,6 +16,7 @@ Nonsmoking::Application.routes.draw do
       post :smoking_index
       post :smoking_dependency
       post :fagerstrom
+      post :date_range
     end
   end
   resources :states, only: [:index, :show]
