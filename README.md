@@ -5,4 +5,4 @@ Simple project that helps people to drop smoking. Anyone can start his diary her
 
 Various tests, leading questions, guides and plain information about the addiction is there.
 
-You can view the result [here](nonsmoking.heroku.com)
+You can view the result [here](http://nonsmoking.heroku.com)
