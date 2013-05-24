@@ -10,6 +10,8 @@ gem 'forem-theme-twist', :git => "git://github.com/radar/forem-theme-twist.git"
 
 gem 'forem-gfm_formatter'
 
+gem 'acts_as_commentable_with_threading'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
