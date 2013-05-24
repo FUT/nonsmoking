@@ -4,6 +4,9 @@ DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
 User.create email: 'user@example.com', password: 'secret12'
+User.create email: 'user1@example.com', password: 'secret12'
+User.create email: 'user2@example.com', password: 'secret12'
+User.create email: 'user3@example.com', password: 'secret12'
 User.create email: 'admin@example.com', password: 'secret12' do |u|
   u.admin = true
 end
