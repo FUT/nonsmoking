@@ -8,6 +8,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+      can :manage, Diary, failed: false, user_id: user.id
     end
   end
 end
