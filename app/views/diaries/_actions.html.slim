@@ -1,0 +1,4 @@
+.actions.center
+  = link_to 'Мой дневник', diary_path(current_user.diary), class: 'btn btn-large btn-success'
+  = link_to 'Активные дневники', all_diaries_path(failed: false), class: 'btn btn-large btn-success'
+  = link_to 'Дневники неудач', all_diaries_path(failed: true), class: 'btn btn-large btn-success'

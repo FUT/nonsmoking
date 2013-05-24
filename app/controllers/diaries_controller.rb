@@ -2,7 +2,7 @@ class DiariesController < ApplicationController
   load_resource
 
   def all
-    @diaries = Diary.where(failed: params[:failed])
+    @diaries = Diary.where(failed: params[:failed]).page(params[:page])
   end
 
   def next_state
