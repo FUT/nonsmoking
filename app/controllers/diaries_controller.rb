@@ -8,7 +8,7 @@ class DiariesController < ApplicationController
   def next_state
     @diary.update_attributes params[:diary]
 
-    @diary.next_state!
+    @diary.next_state! unless params[:save_only]
     redirect_to action: :show
   end
 
