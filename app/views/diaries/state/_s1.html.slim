@@ -1,5 +1,8 @@
-h1.center Тест курящего человека
-= simple_form_for :smoking_index, url: smoking_index_diary_path(@diary) do |f|
-  = f.input :sig_per_day, label: 'Сколько сигарет вы выкуриваете в день?'
-  = f.input :months, label: 'Сколько месяцев в году вы курили?'
-  .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
+- if can? :edit, diary
+  h1.center Тест курящего человека
+  = simple_form_for :smoking_index, url: smoking_index_diary_path(@diary) do |f|
+    = f.input :sig_per_day, label: 'Сколько сигарет вы выкуриваете в день?'
+    = f.input :months, label: 'Сколько месяцев в году вы курили?'
+    .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
+- else
+  = render 'not_finished'

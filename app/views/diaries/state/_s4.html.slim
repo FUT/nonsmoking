@@ -1,8 +1,11 @@
-h1.center Стаж курения
+- if can? :edit, diary
+  h1.center Стаж курения
 
-p Сколько лет и месяцев вы курите?
+  p Сколько лет и месяцев вы курите?
 
-= simple_form_for :diary, url: next_state_diary_path(@diary) do |f|
-  = f.input :smoke_years, label: 'Лет'
-  = f.input :smoke_months, label: 'Месяцев'
-  .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
+  = simple_form_for :diary, url: next_state_diary_path(@diary) do |f|
+    = f.input :smoke_years, label: 'Лет'
+    = f.input :smoke_months, label: 'Месяцев'
+    .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'
+- else
+  = render 'not_finished'

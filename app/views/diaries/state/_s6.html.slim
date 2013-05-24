@@ -1,9 +1,13 @@
 h1.center Прошлые ошибки
 
-= simple_form_for :diary, url: next_state_diary_path(diary) do |f|
-  = f.input :previous_fail, label: 'Выпишите свои ошибки и неудачи, с которыми вы столкнулись бросая курить online, проанализируйте их, укажите каким образом вы будете их исправлять, дождитесь комментариев от других пользователей. Оставьте поле пустым, если вы ещё не пробовали бросить курить.', as: :text
-  .actions
-    = f.submit 'Сохранить', class: 'btn btn-large btn-info', name: :save_only
-    = f.submit 'Продолжить', class: 'btn btn-large btn-success', name: :continue
+- if can? :edit, diary
+  = simple_form_for :diary, url: next_state_diary_path(diary) do |f|
+    = f.input :previous_fail, label: 'Выпишите свои ошибки и неудачи, с которыми вы столкнулись бросая курить online, проанализируйте их, укажите каким образом вы будете их исправлять, дождитесь комментариев от других пользователей. Оставьте поле пустым, если вы ещё не пробовали бросить курить.', as: :text
+    .actions
+      = f.submit 'Сохранить', class: 'btn btn-large btn-info', name: :save_only
+      = f.submit 'Продолжить', class: 'btn btn-large btn-success', name: :continue
+- else
+  p = diary.previous_fail
 
-= render partial: 'comments/thread', locals: { diary: diary }
+- if signed_in?
+  = render partial: 'comments/thread', locals: { diary: diary }

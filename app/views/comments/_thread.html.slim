@@ -3,7 +3,7 @@
     = simple_form_for :new_comment, url: comments_path do |f|
       = f.input :body, as: :text, input_html: { class: 'comment-body' }, label: 'Добавить комментарий'
       = f.hidden_field :diary_id, name: :diary_id, value: diary.id
-      = f.submit 'Отправить', class: 'btn btn-large btn-success'
+      .actions = f.submit 'Отправить', class: 'btn btn-large btn-success'
 
   - diary_comments = diary.comment_threads.order('created_at DESC').page(params[:page])
   = render diary_comments

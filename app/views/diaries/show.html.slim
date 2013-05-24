@@ -1,11 +1,5 @@
 article
-  - if @diary.state < 9
-    - if can? :edit, @diary
-      = render "diaries/state/s#{@diary.state}", diary: @diary
-    - else
-      = render "diaries/state/not_finished", diary: @diary
+  - if (9..15).include? @diary.state
+    = render 'diaries/state/time_restricted_state', diary: @diary
   - else
-    - if @diary.state < 16
-      = render 'diaries/state/time_restricted_state', diary: @diary
-    - else
-      = render "diaries/state/s#{@diary.state}", diary: @diary
+    = render "diaries/state/s#{@diary.state}", diary: @diary

@@ -1,4 +1,34 @@
 h1.center Этап мастерства
 p Достигнув этого этапа, не ослабляйте бдительность – не забывайте, что желание закурить будет с вами постоянно, так же как и провоцирующие на рецидив действия. Важно не забывать об этом и бороться за качество своего здоровья и жизни окружающих вас людей.
+h4.center.full-info-trigger Полная информация
+.full-info
+  table.table
+    tr
+      td Пользователь
+      td = diary.user.email
+    tr
+      td Индекс курильщика
+      td = diary.smoking_index
+    tr
+      td Зависимость
+      td = Diary::DEPENDENCIES[diary.smoking_dependency]
+    tr
+      td Тест Фагестрома
+      td = diary.fagerstrom
+    tr
+      td Предыдущий опыт
+      td = diary.previous_experience
+    tr
+      td Предыдущие ошибки
+      td = diary.previous_fail
+    tr
+      td Длительность курения
+      td = "#{diary.smoke_years} лет #{diary.smoke_months} месяцев"
+    tr
+      td Цель
+      td = diary.aim
+    tr
+      td Стратегия
+      td = diary.strategy
 
 = render partial: 'comments/thread', locals: { diary: diary }
