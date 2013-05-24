@@ -2,6 +2,7 @@
   b = link_to diary.user.email, diary
   .diary-state
     - if diary.preparation_ended
-      = "Начал вести дневник #{ time_ago_in_words diary.preparation_ended }"
+      = "Начал вести дневник #{ time_ago_in_words diary.preparation_ended } назад"
+      .stage = t('states')[diary.state - 9] if diary.state > 8
     - else
       | Еще не заполнил дневник
