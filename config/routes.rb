@@ -23,6 +23,7 @@ Nonsmoking::Application.routes.draw do
     end
   end
   resources :states, only: [:index, :show]
+  resources :comments, only: [:create]
 
   namespace 'pages' do
     get :home

@@ -1,0 +1,6 @@
+= simple_form_for :add_comment, url: comments_path do |f|
+  = f.input :body, as: :text, input_html: { class: 'comment-body' }, label: 'Добавить комментарий'
+  = f.hidden_field :diary_id, name: :diary_id, value: diary.id
+  = f.submit 'Отправить', class: 'btn btn-large btn-success'
+
+= render diary.comment_threads

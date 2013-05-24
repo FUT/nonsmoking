@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Diary < ActiveRecord::Base
+  acts_as_commentable
+
   DEPENDENCIES = %w{Идеаторная Психосоматическая Диссоциированная}
 
   TIME_RESTRICTIONS = [
