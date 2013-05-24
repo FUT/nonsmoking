@@ -29,7 +29,7 @@ class Diary < ActiveRecord::Base
 
   attr_accessible :state, :user_id, :smoke_years, :smoke_months, :previous_experience, :previous_fail,
     :aim, :smoking_bad, :what_if_no_smoking, :why_it_brings_satisfaction, :stereotype_cause, :stereotype_denial,
-    :hobby_no_smoking, :preparation_ended
+    :hobby_no_smoking, :preparation_ended, :strategy
 
   belongs_to :user
 
@@ -42,6 +42,6 @@ class Diary < ActiveRecord::Base
   end
 
   def ready_for_next_state?
-    Time.now > preparation_ended + TIME_RESTRICTIONS[state - 8]
+    Time.now > preparation_ended + TIME_RESTRICTIONS[state - 9]
   end
 end

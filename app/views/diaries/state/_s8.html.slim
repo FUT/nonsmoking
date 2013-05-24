@@ -1,0 +1,5 @@
+h1.center Стратегия
+
+= simple_form_for :diary, url: next_state_diary_path(@diary) do |f|
+  = f.input :strategy, label: 'Проанализируйте свой опыт, советы пользьователей и выработайте стратегию по которой вы будете бросать курить.', as: :text
+  .center = f.submit 'Продолжить', class: 'btn btn-large btn-success'

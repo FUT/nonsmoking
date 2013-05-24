@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130523175341) do
     t.text     "stereotype_cause"
     t.text     "stereotype_denial"
     t.text     "hobby_no_smoking"
+    t.text     "strategy"
     t.datetime "preparation_ended"
   end
 
