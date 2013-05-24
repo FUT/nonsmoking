@@ -1,6 +1,6 @@
 .login-form
   - if signed_in?
-    = link_to 'Дневники', main_app.diaries_path, class: 'btn btn-success'
+    .all-diaries = link_to 'Дневники', main_app.diaries_path, class: 'btn btn-success'
     .logout-button = link_to 'Выйти', main_app.destroy_user_session_path, method: :delete, class: 'btn btn-info'
   - elsif !%w{registrations sessions}.include?(controller_name)
     = simple_form_for :user, url: main_app.user_session_path do |f|
