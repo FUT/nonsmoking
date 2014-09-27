@@ -1,0 +1,9 @@
+language: ruby
+
+before_install: sudo apt-get install libicu-dev
+
+before_script:
+- psql -U postgres -c 'create database test;'
+- bundle exec rake db:migrate
+
+script: bundle exec rake test:ci
