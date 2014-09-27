@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should return true' do
+    true.should_be true
+  end
 end
